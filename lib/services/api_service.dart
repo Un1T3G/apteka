@@ -6,12 +6,14 @@ import '../models/category.dart';
 import '../models/product.dart';
 
 class ApiService {
-  static const baseUrl = 'https://apteka-server.vercel.app/api';
+  static const baseUrl = 'http://172.16.0.2:3000/api';
 
   static Future<List<Category>> fetchCategories() async {
     final response = await http.get(Uri.parse('$baseUrl/category'));
+
     if (response.statusCode == 200) {
       final List jsonList = json.decode(response.body);
+      print(jsonList);
       return jsonList.map((json) => Category.fromJson(json)).toList();
     } else {
       throw Exception('Failed to load categories');
@@ -35,10 +37,9 @@ class ApiService {
     ).replace(queryParameters: queryParams);
     final response = await http.get(uri);
 
-    print(uri);
-
     if (response.statusCode == 200) {
       final List jsonList = json.decode(response.body);
+
       return jsonList.map((json) => Product.fromJson(json)).toList();
     } else {
       throw Exception('Failed to load products');

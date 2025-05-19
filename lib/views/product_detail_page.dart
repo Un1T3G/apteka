@@ -21,7 +21,7 @@ class ProductDetailPage extends StatelessWidget {
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData) {
-            return Center(child: Text('Dari darmaq tabilmadi.'));
+            return Center(child: Text('Dári dármaq tabilmadi.'));
           }
 
           final product = snapshot.data!;
@@ -48,21 +48,26 @@ class ProductDetailPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 16),
-
-                // Name
                 Text(
                   product.name,
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 8),
-
-                // Info Cards
+                Card(
+                  elevation: 2,
+                  margin: EdgeInsets.only(bottom: 12),
+                  child: ListTile(
+                    leading: Icon(Icons.business_outlined),
+                    title: Text('Dárixananiń  ati'),
+                    subtitle: Text('${product.building_name}'),
+                  ),
+                ),
                 Card(
                   elevation: 2,
                   margin: EdgeInsets.only(bottom: 12),
                   child: ListTile(
                     leading: Icon(Icons.attach_money),
-                    title: Text('Senasi'),
+                    title: Text('Bahasi'),
                     subtitle: Text('${product.price}'),
                   ),
                 ),

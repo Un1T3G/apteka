@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(width: 64, child: Image.asset('assets/logo.png')),
                   Text(
-                    'Onlayn dari darmaq izlew sistemasi',
+                    'Onlayn dári dármaq ızlew sisteması ',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'Dari ati',
+                  labelText: 'Dári ati yamasa dárixananiń  ati',
                   prefixIcon: Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(16),
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Icon(Icons.category),
                         SizedBox(width: 8),
-                        Text('Kategoriiya'),
+                        Text('Dári kategoriyası'),
                       ],
                     ),
                     value: selectedCategory,

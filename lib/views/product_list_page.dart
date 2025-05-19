@@ -14,7 +14,7 @@ class ProductListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(this.title ?? 'Dari darmaq')),
+      appBar: AppBar(title: Text(this.title ?? 'Dári darmaqlar')),
       body: FutureBuilder<List<Product>>(
         future: ApiService.fetchProducts(
           searchQuery: searchQuery,
@@ -26,7 +26,7 @@ class ProductListPage extends StatelessWidget {
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return Center(child: Text('Dari darmaq tabilmadi.'));
+            return Center(child: Text('Dári dármaq tabilmadi.'));
           }
 
           final products = snapshot.data!;
@@ -39,7 +39,7 @@ class ProductListPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
-                    'Izlew natiyjesi boyinsha ${products.length} natiyje tabildi',
+                    'Izlew nátiyjesi boyınsha ${products.length} dári darmaq tabildi',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -72,7 +72,6 @@ class ProductListPage extends StatelessWidget {
                           padding: const EdgeInsets.all(12),
                           child: Row(
                             children: [
-                              // Product Image
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(8),
                                 child: Image.network(
@@ -89,7 +88,6 @@ class ProductListPage extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(width: 12),
-                              // Product Info
                               Expanded(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,6 +129,23 @@ class ProductListPage extends StatelessWidget {
                                         SizedBox(width: 4),
                                         Text(
                                           product.phoneNumber,
+                                          style: TextStyle(
+                                            color: Colors.grey[700],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 4),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.business_outlined,
+                                          size: 16,
+                                          color: Colors.grey,
+                                        ),
+                                        SizedBox(width: 4),
+                                        Text(
+                                          product.building_name,
                                           style: TextStyle(
                                             color: Colors.grey[700],
                                           ),

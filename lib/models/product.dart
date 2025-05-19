@@ -3,6 +3,7 @@ import 'package:apteka/models/category.dart';
 class Product {
   final int id;
   final String name;
+  final String building_name;
   final String description;
   final String location;
   final String phoneNumber;
@@ -14,6 +15,7 @@ class Product {
   Product({
     required this.id,
     required this.name,
+    required this.building_name,
     required this.description,
     required this.location,
     required this.phoneNumber,
@@ -27,6 +29,7 @@ class Product {
     return Product(
       id: json['id'],
       name: json['name'],
+      building_name: json['building_name'],
       description: json['description'],
       location: json['location'],
       phoneNumber: json['phone_number'],
