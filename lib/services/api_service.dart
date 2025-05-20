@@ -6,7 +6,7 @@ import '../models/category.dart';
 import '../models/product.dart';
 
 class ApiService {
-  static const baseUrl = 'http://172.16.0.2:3000/api';
+  static const baseUrl = 'https://apteka-server.vercel.app/api';
 
   static Future<List<Category>> fetchCategories() async {
     final response = await http.get(Uri.parse('$baseUrl/category'));
